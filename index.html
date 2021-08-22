@@ -16,8 +16,10 @@
                 url: "openapi.yaml", 
                 dom_id: "#openapi",
                requestInterceptor: function() {   
-                var pathname = new URL(this.url).pathname;
-                this.url = "https://smard.api.proxy.bund.dev" + pathname;
+                if(this.url !== "openapi.yaml") {
+                   var pathname = new URL(this.url).pathname;
+                   this.url = "https://smard.api.proxy.bund.dev" + pathname;
+                }
                 return this;
               },
             })
