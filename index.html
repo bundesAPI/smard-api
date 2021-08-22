@@ -14,7 +14,12 @@
         window.onload = function () {
             const ui = SwaggerUIBundle({
                 url: "openapi.yaml", 
-                dom_id: "#openapi"
+                dom_id: "#openapi",
+                   requestInterceptor: function() {   
+                    let url = new URL(this.url);
+                    this.url = "https://smard.api.proxy.bund.dev" + '/' + url.path // will change the URL used.
+                    return this;
+                  },
             })
         }
     </script>
