@@ -15,11 +15,11 @@
             const ui = SwaggerUIBundle({
                 url: "openapi.yaml", 
                 dom_id: "#openapi",
-                   requestInterceptor: function() {   
-                    let url = new URL(this.url);
-                    this.url = "https://smard.api.proxy.bund.dev" + '/' + url.path // will change the URL used.
-                    return this;
-                  },
+               requestInterceptor: function() {   
+                var pathname = new URL(this.url).pathname;
+                this.url = "https://smard.api.proxy.bund.dev" + pathname;
+                return this;
+              },
             })
         }
     </script>
