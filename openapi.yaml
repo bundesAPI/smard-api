@@ -30,6 +30,7 @@ paths:
     get:
       parameters:
         - $ref: '#/components/parameters/filterParameter'
+        - $ref: '#/components/parameters/filterCopyParameter'
         - $ref: '#/components/parameters/regionParameter'
         - $ref: '#/components/parameters/resolutionParameter'
         - in: path
