@@ -26,7 +26,7 @@ paths:
       description: "Verfügbare Timestamps für Filter, Region und Auflösung"
       summary: "Indizes"
     
-  /{filter}/{region}/{filter}_{region}_{resolution}_{timestamp}.json:
+  /{filter}/{region}/{filterCopy}_{region}_{resolution}_{timestamp}.json:
     get:
       parameters:
         - $ref: '#/components/parameters/filterParameter'
@@ -116,6 +116,17 @@ components:
           * `410` - Stromverbrauch: Gesamt (Netzlast)
           * `4359` - Stromverbrauch: Residuallast
           * `4387` - Stromverbrauch: Pumpspeicher
+    
+    filterCopyParameter:
+      in: path
+      name: filterCopy
+      schema:
+        type: integer
+        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387]
+      required: true
+      description: >
+        Muss dem Wert von "filter". (Kaputtes API-Design)
+ 
     regionParameter:
       in: path
       name: region
