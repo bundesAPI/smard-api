@@ -89,7 +89,7 @@ components:
       description: >
         Auflösung der Daten:
           * `hour` - Stündlich
-          * `quater_hour` - Viertelstündlich
+          * `quarterhour` - Viertelstündlich
           * `day` - Täglich
           * `week` - Wöchentlich
           * `month` - Monatlich
