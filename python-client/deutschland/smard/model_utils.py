@@ -1696,6 +1696,11 @@ def model_to_dict(model_instance, serialize=True):
             attribute_map
     """
     result = {}
+    extract_item = (
+        lambda item: (item[0], model_to_dict(item[1], serialize=serialize))
+        if hasattr(item[1], "_data_store")
+        else item
+    )
 
     model_instances = [model_instance]
     if model_instance._composed_schemas:
@@ -1725,21 +1730,13 @@ def model_to_dict(model_instance, serialize=True):
                             res.append(v)
                         elif isinstance(v, ModelSimple):
                             res.append(v.value)
+                        elif isinstance(v, dict):
+                            res.append(dict(map(extract_item, v.items())))
                         else:
                             res.append(model_to_dict(v, serialize=serialize))
                     result[attr] = res
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (
-                            item[0],
-                            model_to_dict(item[1], serialize=serialize),
-                        )
-                        if hasattr(item[1], "_data_store")
-                        else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(extract_item, value.items()))
             elif isinstance(value, ModelSimple):
                 result[attr] = value.value
             elif hasattr(value, "_data_store"):
