@@ -29,6 +29,6 @@ jobs:
           commit-to-git: true
           upload-to-pypi: true
           upload-to-testpypi: false
-          pypi-token: ${{ secrets.PYPI_API_TOKEN }}
-          testpypi-token: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          pypi-token: ${{ secrets.PYPI_PRODUCTION }}
+          testpypi-token: ${{ secrets.PYPI_TEST }}
           python-version: ${{ matrix.python-version }}
