@@ -99,7 +99,9 @@ components:
       name: filter
       schema:
         type: integer
-        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387]
+        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387, 4169, 5078, 4996, 4997, 4170, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262]
+
+
       required: true
       description: >
         Mögliche Filter:
@@ -118,17 +120,32 @@ components:
           * `410` - Stromverbrauch: Gesamt (Netzlast)
           * `4359` - Stromverbrauch: Residuallast
           * `4387` - Stromverbrauch: Pumpspeicher
+          * `4169` - Marktpreis: Deutschland/Luxemburg
+          * `5078` - Marktpreis: Anrainer DE/LU
+          * `4996` - Marktpreis: Belgien
+          * `4997` - Marktpreis: Norwegen 2
+          * `4170` - Marktpreis: Österreich
+          * `252` - Marktpreis: Dänemark 1
+          * `253` - Marktpreis: Dänemark 2
+          * `254` - Marktpreis: Frankreich
+          * `255` - Marktpreis: Italien (Nord)
+          * `256` - Marktpreis: Niederlande
+          * `257` - Marktpreis: Polen
+          * `258` - Marktpreis: Polen
+          * `259` - Marktpreis: Schweiz
+          * `260` - Marktpreis: Slowenien
+          * `261` - Marktpreis: Tschechien
+          * `262` - Marktpreis: Ungarn
     
     filterCopyParameter:
       in: path
       name: filterCopy
       schema:
         type: integer
-        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387]
+        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387, 4169, 5078, 4996, 4997, 4170, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262]
       required: true
       description: >
         Muss dem Wert von "filter" entsprechen. (Kaputtes API-Design)
-     
     
     regionCopyParameter:
       in: path
