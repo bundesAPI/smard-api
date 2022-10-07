@@ -23,6 +23,8 @@ paths:
                 $ref: '#/components/schemas/Indices'
               example:
                 timestamps: [1627855200000,1628460000000,1629064800000]
+        '404':
+          description: No data for combination of filter region and resolution
       description: "Verfügbare Timestamps für Filter, Region und Auflösung"
       summary: "Indizes"
     
@@ -49,6 +51,8 @@ paths:
               example:
                 meta_data: {"version": 1, "created": 1627858357549}
                 series: [[1627250400000, 7866.0],[1627254000000, 7881.0]]
+        '404':
+          description: No data for combination of filter region and resolution or mismatch between *copy parameters
       description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
       summary: "Zeitreihendaten"
       
