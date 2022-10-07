@@ -3,60 +3,86 @@ info:
   description: "Bundesnetzagentur Strommarktdaten"
   version: "0.0.1"
   title: "Bundesnetzagentur Strommarktdaten"
-  
+
 servers:
-  - url: "https://www.smard.de/app/chart_data"
-  
+  - url: "https://www.smard.de/app"
+
 paths:
-  /{filter}/{region}/index_{resolution}.json:
+  /chart_data/{filter}/{region}/index_{resolution}.json:
     get:
       parameters:
-        - $ref: '#/components/parameters/filterParameter'
-        - $ref: '#/components/parameters/regionParameter'
-        - $ref: '#/components/parameters/resolutionParameter'
+        - $ref: "#/components/parameters/filterParameter"
+        - $ref: "#/components/parameters/regionParameter"
+        - $ref: "#/components/parameters/resolutionParameter"
       responses:
-        '200':
+        "200":
           description: OK
-          content: 
+          content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Indices'
+                $ref: "#/components/schemas/Indices"
               example:
-                timestamps: [1627855200000,1628460000000,1629064800000]
+                timestamps: [1627855200000, 1628460000000, 1629064800000]
       description: "Verfügbare Timestamps für Filter, Region und Auflösung"
       summary: "Indizes"
-    
-  /{filter}/{region}/{filterCopy}_{regionCopy}_{resolution}_{timestamp}.json:
+
+  /chart_data/{filter}/{region}/{filterCopy}_{regionCopy}_{resolution}_{timestamp}.json:
     get:
       parameters:
-        - $ref: '#/components/parameters/filterParameter'
-        - $ref: '#/components/parameters/filterCopyParameter'
-        - $ref: '#/components/parameters/regionParameter'
-        - $ref: '#/components/parameters/regionCopyParameter'
-        - $ref: '#/components/parameters/resolutionParameter'
+        - $ref: "#/components/parameters/filterParameter"
+        - $ref: "#/components/parameters/filterCopyParameter"
+        - $ref: "#/components/parameters/regionParameter"
+        - $ref: "#/components/parameters/regionCopyParameter"
+        - $ref: "#/components/parameters/resolutionParameter"
         - in: path
           name: timestamp
           schema:
             type: integer
           required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TimeSeries'
+                $ref: "#/components/schemas/TimeSeries"
               example:
-                meta_data: {"version": 1, "created": 1627858357549}
-                series: [[1627250400000, 7866.0],[1627254000000, 7881.0]]
+                meta_data: { "version": 1, "created": 1627858357549 }
+                series: [[1627250400000, 7866.0], [1627254000000, 7881.0]]
       description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
       summary: "Zeitreihendaten"
-      
+
+  /table_data/{filter}/{region}/{filterCopy}_{regionCopy}_quarterhour_{timestamp}.json:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/filterParameter"
+        - $ref: "#/components/parameters/filterCopyParameter"
+        - $ref: "#/components/parameters/regionParameter"
+        - $ref: "#/components/parameters/regionCopyParameter"
+        - $ref: "#/components/parameters/resolutionParameter"
+        - in: path
+          name: timestamp
+          schema:
+            type: integer
+          required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimeSeries"
+              example:
+                meta_data: { "version": 1, "created": 1627858357549 }
+                series: [[1627250400000, 7866.0], [1627254000000, 7881.0]]
+      description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
+      summary: "Zeitreihendaten"
+
 components:
   schemas:
     Indices:
       type: object
-      properties: 
+      properties:
         timestamps:
           type: array
           items:
@@ -64,7 +90,7 @@ components:
     TimeSeries:
       type: object
       properties:
-        meta_data: 
+        meta_data:
           type: object
           properties:
             version:
@@ -94,13 +120,46 @@ components:
           * `week` - Wöchentlich
           * `month` - Monatlich
           * `year` - Jährlich
+
     filterParameter:
       in: path
       name: filter
       schema:
         type: integer
-        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387, 4169, 5078, 4996, 4997, 4170, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262]
-
+        enum:
+          [
+            1223,
+            1224,
+            1225,
+            1226,
+            1227,
+            1228,
+            4066,
+            4067,
+            4068,
+            4069,
+            4070,
+            4071,
+            410,
+            4359,
+            4387,
+            4169,
+            5078,
+            4996,
+            4997,
+            4170,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+          ]
 
       required: true
       description: >
@@ -136,33 +195,92 @@ components:
           * `260` - Marktpreis: Slowenien
           * `261` - Marktpreis: Tschechien
           * `262` - Marktpreis: Ungarn
-    
+
     filterCopyParameter:
       in: path
       name: filterCopy
       schema:
         type: integer
-        enum: [1223, 1224, 1225, 1226, 1227, 1228, 4066, 4067, 4068, 4069, 4070, 4071, 410, 4359, 4387, 4169, 5078, 4996, 4997, 4170, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262]
+        enum:
+          [
+            1223,
+            1224,
+            1225,
+            1226,
+            1227,
+            1228,
+            4066,
+            4067,
+            4068,
+            4069,
+            4070,
+            4071,
+            410,
+            4359,
+            4387,
+            4169,
+            5078,
+            4996,
+            4997,
+            4170,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+          ]
       required: true
       description: >
         Muss dem Wert von "filter" entsprechen. (Kaputtes API-Design)
-    
+
     regionCopyParameter:
       in: path
       name: regionCopy
       schema:
         type: string
-        enum: [DE, AT, LU, DE-LU, DE-AT-LU,  50Hertz, Amprion, TenneT, TransnetBW, APG, Creos]
+        enum:
+          [
+            DE,
+            AT,
+            LU,
+            DE-LU,
+            DE-AT-LU,
+            50Hertz,
+            Amprion,
+            TenneT,
+            TransnetBW,
+            APG,
+            Creos,
+          ]
       required: true
       description: >
         Muss dem Wert von "region" entsprechen. (Kaputtes API-Design)
- 
+
     regionParameter:
       in: path
       name: region
       schema:
         type: string
-        enum: [DE, AT, LU, DE-LU, DE-AT-LU,  50Hertz, Amprion, TenneT, TransnetBW, APG, Creos]
+        enum:
+          [
+            DE,
+            AT,
+            LU,
+            DE-LU,
+            DE-AT-LU,
+            50Hertz,
+            Amprion,
+            TenneT,
+            TransnetBW,
+            APG,
+            Creos,
+          ]
         default: DE
       required: true
       description: >
