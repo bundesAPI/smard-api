@@ -51,7 +51,9 @@ paths:
               example:
                 meta_data: { "version": 1, "created": 1627858357549 }
                 series: [[1627250400000, 7866.0], [1627254000000, 7881.0]]
-      description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
+        "404":
+          description: No data for combination of filter region and resolution or mismatch between *copy parameters
+     description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
       summary: "Zeitreihendaten"
 
   /table_data/{filter}/{region}/{filterCopy}_{regionCopy}_quarterhour_{timestamp}.json:
@@ -79,7 +81,7 @@ paths:
                 series: { "values": [{ "timestamp": 1647817200000, "versions": [{ "value": 1225, "name": null }] }] }
         "404":
           description: No data for combination of filter region and resolution or mismatch between *copy parameters
-      description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
+     description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
       summary: "Zeitreihendaten"
 
 components:
