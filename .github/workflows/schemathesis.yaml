@@ -9,7 +9,7 @@ jobs:
         with:
           python-version: '3.8'
 
-      - run: pip install schemathesis
+      - run: pip install 'schemathesis>=3.17.3'
 
       - name: "Extract base url from openapi.yaml"
         uses: mikefarah/yq@master
