@@ -196,6 +196,12 @@ components:
             260,
             261,
             262,
+            3791,
+            123,
+            126,
+            715,
+            5097,
+            122,
           ]
 
       required: true
@@ -232,6 +238,12 @@ components:
           * `260` - Marktpreis: Slowenien
           * `261` - Marktpreis: Tschechien
           * `262` - Marktpreis: Ungarn
+          * `3791` - Prognostizierte Erzeugung: Offshore
+          * `123` - Prognostizierte Erzeugung: Onshore
+          * `125` - Prognostizierte Erzeugung: Photovoltaik
+          * `715` - Prognostizierte Erzeugung: Sonstige
+          * `5097` - Prognostizierte Erzeugung: Wind und Photovoltaik
+          * `122` - Prognostizierte Erzeugung: Gesamt
 
     filterCopyParameter:
       in: path
@@ -271,6 +283,12 @@ components:
             260,
             261,
             262,
+            3791,
+            123,
+            126,
+            715,
+            5097,
+            122,
           ]
       required: true
       description: >
