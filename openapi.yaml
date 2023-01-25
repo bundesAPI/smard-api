@@ -63,7 +63,6 @@ paths:
         - $ref: "#/components/parameters/filterCopyParameter"
         - $ref: "#/components/parameters/regionParameter"
         - $ref: "#/components/parameters/regionCopyParameter"
-        - $ref: "#/components/parameters/resolutionParameter"
         - in: path
           name: timestamp
           schema:
@@ -78,7 +77,7 @@ paths:
                 $ref: "#/components/schemas/TimeSeries2"
               example:
                 meta_data: { "version": 1, "created": 1627858357549 }
-                series: { "values": [{ "timestamp": 1647817200000, "versions": [{ "value": 1225, "name": null }] }] }
+                series: [{ "timestamp": 1647817200000, "versions": [{ "value": 1225, "name": null }] }]
         "404":
           description: No data for combination of filter region and resolution or mismatch between *copy parameters
       description: "Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp"
