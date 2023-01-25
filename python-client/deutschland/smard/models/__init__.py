@@ -11,4 +11,12 @@
 
 from deutschland.smard.model.indices import Indices
 from deutschland.smard.model.time_series import TimeSeries
+from deutschland.smard.model.time_series2 import TimeSeries2
+from deutschland.smard.model.time_series2_series_inner import TimeSeries2SeriesInner
+from deutschland.smard.model.time_series2_series_inner_values_inner import (
+    TimeSeries2SeriesInnerValuesInner,
+)
+from deutschland.smard.model.time_series2_series_inner_values_inner_versions_inner import (
+    TimeSeries2SeriesInnerValuesInnerVersionsInner,
+)
 from deutschland.smard.model.time_series_meta_data import TimeSeriesMetaData

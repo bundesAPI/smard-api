@@ -52,10 +52,11 @@ from pprint import pprint
 from deutschland.smard.api import default_api
 from deutschland.smard.model.indices import Indices
 from deutschland.smard.model.time_series import TimeSeries
-# Defining the host is optional and defaults to https://www.smard.de/app/chart_data
+from deutschland.smard.model.time_series2 import TimeSeries2
+# Defining the host is optional and defaults to https://www.smard.de/app
 # See configuration.py for a list of all supported configuration parameters.
 configuration = smard.Configuration(
-    host = "https://www.smard.de/app/chart_data"
+    host = "https://www.smard.de/app"
 )
 
 
@@ -64,7 +65,7 @@ configuration = smard.Configuration(
 with smard.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
-    filter = 1223 # int | Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher 
+    filter = 1223 # int | Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher   * `4169` - Marktpreis: Deutschland/Luxemburg   * `5078` - Marktpreis: Anrainer DE/LU   * `4996` - Marktpreis: Belgien   * `4997` - Marktpreis: Norwegen 2   * `4170` - Marktpreis: Österreich   * `252` - Marktpreis: Dänemark 1   * `253` - Marktpreis: Dänemark 2   * `254` - Marktpreis: Frankreich   * `255` - Marktpreis: Italien (Nord)   * `256` - Marktpreis: Niederlande   * `257` - Marktpreis: Polen   * `258` - Marktpreis: Polen   * `259` - Marktpreis: Schweiz   * `260` - Marktpreis: Slowenien   * `261` - Marktpreis: Tschechien   * `262` - Marktpreis: Ungarn   * `3791` - Prognostizierte Erzeugung: Offshore   * `123` - Prognostizierte Erzeugung: Onshore   * `125` - Prognostizierte Erzeugung: Photovoltaik   * `715` - Prognostizierte Erzeugung: Sonstige   * `5097` - Prognostizierte Erzeugung: Wind und Photovoltaik   * `122` - Prognostizierte Erzeugung: Gesamt 
     filter_copy = 1223 # int | Muss dem Wert von \"filter\" entsprechen. (Kaputtes API-Design) 
     region = "DE" # str | Land / Regelzone / Marktgebiet:   * `DE` - Land: Deutschland   * `AT` - Land: Österreich   * `LU` - Land: Luxemburg   * `DE-LU` - Marktgebiet: DE/LU (ab 01.10.2018)   * `DE-AT-LU` - Marktgebiet: DE/AT/LU (bis 30.09.2018)   * `50Hertz` - Regelzone (DE): 50Hertz   * `Amprion`- Regelzone (DE): Amprion   * `TenneT` - Regelzone (DE): TenneT   * `TransnetBW` - Regelzone (DE): TransnetBW   * `APG` - Regelzone (AT): APG   * `Creos` - Regelzone (LU): Creos  (default to "DE")
     region_copy = "DE" # str | Muss dem Wert von \"region\" entsprechen. (Kaputtes API-Design) 
@@ -73,26 +74,31 @@ with smard.ApiClient(configuration) as api_client:
 
     try:
         # Zeitreihendaten
-        api_response = api_instance.filter_region_filter_copy_region_copy_resolution_timestamp_json_get(filter, filter_copy, region, region_copy, resolution, timestamp)
+        api_response = api_instance.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get(filter, filter_copy, region, region_copy, resolution, timestamp)
         pprint(api_response)
     except smard.ApiException as e:
-        print("Exception when calling DefaultApi->filter_region_filter_copy_region_copy_resolution_timestamp_json_get: %s\n" % e)
+        print("Exception when calling DefaultApi->chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://www.smard.de/app/chart_data*
+All URIs are relative to *https://www.smard.de/app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**filter_region_filter_copy_region_copy_resolution_timestamp_json_get**](docs/DefaultApi.md#filter_region_filter_copy_region_copy_resolution_timestamp_json_get) | **GET** /{filter}/{region}/{filterCopy}_{regionCopy}_{resolution}_{timestamp}.json | Zeitreihendaten
-*DefaultApi* | [**filter_region_index_resolution_json_get**](docs/DefaultApi.md#filter_region_index_resolution_json_get) | **GET** /{filter}/{region}/index_{resolution}.json | Indizes
+*DefaultApi* | [**chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get**](docs/DefaultApi.md#chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get) | **GET** /chart_data/{filter}/{region}/{filterCopy}_{regionCopy}_{resolution}_{timestamp}.json | Zeitreihendaten
+*DefaultApi* | [**chart_data_filter_region_index_resolution_json_get**](docs/DefaultApi.md#chart_data_filter_region_index_resolution_json_get) | **GET** /chart_data/{filter}/{region}/index_{resolution}.json | Indizes
+*DefaultApi* | [**table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get**](docs/DefaultApi.md#table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get) | **GET** /table_data/{filter}/{region}/{filterCopy}_{regionCopy}_quarterhour_{timestamp}.json | Zeitreihendaten
 
 
 ## Documentation For Models
 
  - [Indices](docs/Indices.md)
  - [TimeSeries](docs/TimeSeries.md)
+ - [TimeSeries2](docs/TimeSeries2.md)
+ - [TimeSeries2SeriesInner](docs/TimeSeries2SeriesInner.md)
+ - [TimeSeries2SeriesInnerValuesInner](docs/TimeSeries2SeriesInnerValuesInner.md)
+ - [TimeSeries2SeriesInnerValuesInnerVersionsInner](docs/TimeSeries2SeriesInnerValuesInnerVersionsInner.md)
  - [TimeSeriesMetaData](docs/TimeSeriesMetaData.md)
 
 

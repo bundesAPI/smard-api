@@ -904,10 +904,10 @@ class Endpoint(object):
         Example:
 
         api_instance = DefaultApi()
-        api_instance.filter_region_filter_copy_region_copy_resolution_timestamp_json_get  # this is an instance of the class Endpoint
-        api_instance.filter_region_filter_copy_region_copy_resolution_timestamp_json_get()  # this invokes api_instance.filter_region_filter_copy_region_copy_resolution_timestamp_json_get.__call__()
+        api_instance.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get  # this is an instance of the class Endpoint
+        api_instance.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get()  # this invokes api_instance.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.filter_region_filter_copy_region_copy_resolution_timestamp_json_get.callable or self.callable in this class
+        api_instance.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

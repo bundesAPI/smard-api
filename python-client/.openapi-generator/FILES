@@ -7,6 +7,10 @@ create_doc.py
 docs/DefaultApi.md
 docs/Indices.md
 docs/TimeSeries.md
+docs/TimeSeries2.md
+docs/TimeSeries2SeriesInner.md
+docs/TimeSeries2SeriesInnerValuesInner.md
+docs/TimeSeries2SeriesInnerValuesInnerVersionsInner.md
 docs/TimeSeriesMetaData.md
 git_push.sh
 pyproject.toml
@@ -25,6 +29,10 @@ smard/exceptions.py
 smard/model/__init__.py
 smard/model/indices.py
 smard/model/time_series.py
+smard/model/time_series2.py
+smard/model/time_series2_series_inner.py
+smard/model/time_series2_series_inner_values_inner.py
+smard/model/time_series2_series_inner_values_inner_versions_inner.py
 smard/model/time_series_meta_data.py
 smard/model_utils.py
 smard/models/__init__.py
@@ -34,5 +42,9 @@ test/__init__.py
 test/test_default_api.py
 test/test_indices.py
 test/test_time_series.py
+test/test_time_series2.py
+test/test_time_series2_series_inner.py
+test/test_time_series2_series_inner_values_inner.py
+test/test_time_series2_series_inner_values_inner_versions_inner.py
 test/test_time_series_meta_data.py
 tox.ini

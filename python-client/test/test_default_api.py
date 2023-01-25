@@ -25,17 +25,28 @@ class TestDefaultApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_filter_region_filter_copy_region_copy_resolution_timestamp_json_get(self):
-        """Test case for filter_region_filter_copy_region_copy_resolution_timestamp_json_get
+    def test_chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get(
+        self,
+    ):
+        """Test case for chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get
 
         Zeitreihendaten  # noqa: E501
         """
         pass
 
-    def test_filter_region_index_resolution_json_get(self):
-        """Test case for filter_region_index_resolution_json_get
+    def test_chart_data_filter_region_index_resolution_json_get(self):
+        """Test case for chart_data_filter_region_index_resolution_json_get
 
         Indizes  # noqa: E501
+        """
+        pass
+
+    def test_table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get(
+        self,
+    ):
+        """Test case for table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get
+
+        Zeitreihendaten  # noqa: E501
         """
         pass
 

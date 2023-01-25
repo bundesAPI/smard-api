@@ -105,9 +105,7 @@ class Configuration(object):
         ssl_ca_cert=None,
     ):
         """Constructor"""
-        self._base_path = (
-            "https://www.smard.de/app/chart_data" if host is None else host
-        )
+        self._base_path = "https://www.smard.de/app" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -407,7 +405,7 @@ class Configuration(object):
         """
         return [
             {
-                "url": "https://www.smard.de/app/chart_data",
+                "url": "https://www.smard.de/app",
                 "description": "No description provided",
             }
         ]

@@ -16,6 +16,7 @@ from deutschland.smard.api_client import ApiClient
 from deutschland.smard.api_client import Endpoint as _Endpoint
 from deutschland.smard.model.indices import Indices
 from deutschland.smard.model.time_series import TimeSeries
+from deutschland.smard.model.time_series2 import TimeSeries2
 from deutschland.smard.model_utils import (  # noqa: F401
     check_allowed_values,
     check_validations,
@@ -38,12 +39,12 @@ class DefaultApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.filter_region_filter_copy_region_copy_resolution_timestamp_json_get_endpoint = _Endpoint(
+        self.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get_endpoint = _Endpoint(
             settings={
                 "response_type": (TimeSeries,),
                 "auth": [],
-                "endpoint_path": "/{filter}/{region}/{filterCopy}_{regionCopy}_{resolution}_{timestamp}.json",
-                "operation_id": "filter_region_filter_copy_region_copy_resolution_timestamp_json_get",
+                "endpoint_path": "/chart_data/{filter}/{region}/{filterCopy}_{regionCopy}_{resolution}_{timestamp}.json",
+                "operation_id": "chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get",
                 "http_method": "GET",
                 "servers": None,
             },
@@ -93,6 +94,28 @@ class DefaultApi(object):
                         "410": 410,
                         "4359": 4359,
                         "4387": 4387,
+                        "4169": 4169,
+                        "5078": 5078,
+                        "4996": 4996,
+                        "4997": 4997,
+                        "4170": 4170,
+                        "252": 252,
+                        "253": 253,
+                        "254": 254,
+                        "255": 255,
+                        "256": 256,
+                        "257": 257,
+                        "258": 258,
+                        "259": 259,
+                        "260": 260,
+                        "261": 261,
+                        "262": 262,
+                        "3791": 3791,
+                        "123": 123,
+                        "126": 126,
+                        "715": 715,
+                        "5097": 5097,
+                        "122": 122,
                     },
                     ("filter_copy",): {
                         "1223": 1223,
@@ -110,6 +133,28 @@ class DefaultApi(object):
                         "410": 410,
                         "4359": 4359,
                         "4387": 4387,
+                        "4169": 4169,
+                        "5078": 5078,
+                        "4996": 4996,
+                        "4997": 4997,
+                        "4170": 4170,
+                        "252": 252,
+                        "253": 253,
+                        "254": 254,
+                        "255": 255,
+                        "256": 256,
+                        "257": 257,
+                        "258": 258,
+                        "259": 259,
+                        "260": 260,
+                        "261": 261,
+                        "262": 262,
+                        "3791": 3791,
+                        "123": 123,
+                        "126": 126,
+                        "715": 715,
+                        "5097": 5097,
+                        "122": 122,
                     },
                     ("region",): {
                         "DE": "DE",
@@ -178,12 +223,12 @@ class DefaultApi(object):
             },
             api_client=api_client,
         )
-        self.filter_region_index_resolution_json_get_endpoint = _Endpoint(
+        self.chart_data_filter_region_index_resolution_json_get_endpoint = _Endpoint(
             settings={
                 "response_type": (Indices,),
                 "auth": [],
-                "endpoint_path": "/{filter}/{region}/index_{resolution}.json",
-                "operation_id": "filter_region_index_resolution_json_get",
+                "endpoint_path": "/chart_data/{filter}/{region}/index_{resolution}.json",
+                "operation_id": "chart_data_filter_region_index_resolution_json_get",
                 "http_method": "GET",
                 "servers": None,
             },
@@ -225,6 +270,28 @@ class DefaultApi(object):
                         "410": 410,
                         "4359": 4359,
                         "4387": 4387,
+                        "4169": 4169,
+                        "5078": 5078,
+                        "4996": 4996,
+                        "4997": 4997,
+                        "4170": 4170,
+                        "252": 252,
+                        "253": 253,
+                        "254": 254,
+                        "255": 255,
+                        "256": 256,
+                        "257": 257,
+                        "258": 258,
+                        "259": 259,
+                        "260": 260,
+                        "261": 261,
+                        "262": 262,
+                        "3791": 3791,
+                        "123": 123,
+                        "126": 126,
+                        "715": 715,
+                        "5097": 5097,
+                        "122": 122,
                     },
                     ("region",): {
                         "DE": "DE",
@@ -271,8 +338,178 @@ class DefaultApi(object):
             },
             api_client=api_client,
         )
+        self.table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get_endpoint = _Endpoint(
+            settings={
+                "response_type": (TimeSeries2,),
+                "auth": [],
+                "endpoint_path": "/table_data/{filter}/{region}/{filterCopy}_{regionCopy}_quarterhour_{timestamp}.json",
+                "operation_id": "table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "filter",
+                    "filter_copy",
+                    "region",
+                    "region_copy",
+                    "timestamp",
+                ],
+                "required": [
+                    "filter",
+                    "filter_copy",
+                    "region",
+                    "region_copy",
+                    "timestamp",
+                ],
+                "nullable": [],
+                "enum": [
+                    "filter",
+                    "filter_copy",
+                    "region",
+                    "region_copy",
+                ],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {
+                    ("filter",): {
+                        "1223": 1223,
+                        "1224": 1224,
+                        "1225": 1225,
+                        "1226": 1226,
+                        "1227": 1227,
+                        "1228": 1228,
+                        "4066": 4066,
+                        "4067": 4067,
+                        "4068": 4068,
+                        "4069": 4069,
+                        "4070": 4070,
+                        "4071": 4071,
+                        "410": 410,
+                        "4359": 4359,
+                        "4387": 4387,
+                        "4169": 4169,
+                        "5078": 5078,
+                        "4996": 4996,
+                        "4997": 4997,
+                        "4170": 4170,
+                        "252": 252,
+                        "253": 253,
+                        "254": 254,
+                        "255": 255,
+                        "256": 256,
+                        "257": 257,
+                        "258": 258,
+                        "259": 259,
+                        "260": 260,
+                        "261": 261,
+                        "262": 262,
+                        "3791": 3791,
+                        "123": 123,
+                        "126": 126,
+                        "715": 715,
+                        "5097": 5097,
+                        "122": 122,
+                    },
+                    ("filter_copy",): {
+                        "1223": 1223,
+                        "1224": 1224,
+                        "1225": 1225,
+                        "1226": 1226,
+                        "1227": 1227,
+                        "1228": 1228,
+                        "4066": 4066,
+                        "4067": 4067,
+                        "4068": 4068,
+                        "4069": 4069,
+                        "4070": 4070,
+                        "4071": 4071,
+                        "410": 410,
+                        "4359": 4359,
+                        "4387": 4387,
+                        "4169": 4169,
+                        "5078": 5078,
+                        "4996": 4996,
+                        "4997": 4997,
+                        "4170": 4170,
+                        "252": 252,
+                        "253": 253,
+                        "254": 254,
+                        "255": 255,
+                        "256": 256,
+                        "257": 257,
+                        "258": 258,
+                        "259": 259,
+                        "260": 260,
+                        "261": 261,
+                        "262": 262,
+                        "3791": 3791,
+                        "123": 123,
+                        "126": 126,
+                        "715": 715,
+                        "5097": 5097,
+                        "122": 122,
+                    },
+                    ("region",): {
+                        "DE": "DE",
+                        "AT": "AT",
+                        "LU": "LU",
+                        "DE-LU": "DE-LU",
+                        "DE-AT-LU": "DE-AT-LU",
+                        "50HERTZ": "50Hertz",
+                        "AMPRION": "Amprion",
+                        "TENNET": "TenneT",
+                        "TRANSNETBW": "TransnetBW",
+                        "APG": "APG",
+                        "CREOS": "Creos",
+                    },
+                    ("region_copy",): {
+                        "DE": "DE",
+                        "AT": "AT",
+                        "LU": "LU",
+                        "DE-LU": "DE-LU",
+                        "DE-AT-LU": "DE-AT-LU",
+                        "50HERTZ": "50Hertz",
+                        "AMPRION": "Amprion",
+                        "TENNET": "TenneT",
+                        "TRANSNETBW": "TransnetBW",
+                        "APG": "APG",
+                        "CREOS": "Creos",
+                    },
+                },
+                "openapi_types": {
+                    "filter": (int,),
+                    "filter_copy": (int,),
+                    "region": (str,),
+                    "region_copy": (str,),
+                    "timestamp": (int,),
+                },
+                "attribute_map": {
+                    "filter": "filter",
+                    "filter_copy": "filterCopy",
+                    "region": "region",
+                    "region_copy": "regionCopy",
+                    "timestamp": "timestamp",
+                },
+                "location_map": {
+                    "filter": "path",
+                    "filter_copy": "path",
+                    "region": "path",
+                    "region_copy": "path",
+                    "timestamp": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
 
-    def filter_region_filter_copy_region_copy_resolution_timestamp_json_get(
+    def chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get(
         self,
         filter,
         filter_copy,
@@ -288,11 +525,11 @@ class DefaultApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.filter_region_filter_copy_region_copy_resolution_timestamp_json_get(filter, filter_copy, region_copy, timestamp, region="DE", resolution="hour", async_req=True)
+        >>> thread = api.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get(filter, filter_copy, region_copy, timestamp, region="DE", resolution="hour", async_req=True)
         >>> result = thread.get()
 
         Args:
-            filter (int): Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher
+            filter (int): Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher   * `4169` - Marktpreis: Deutschland/Luxemburg   * `5078` - Marktpreis: Anrainer DE/LU   * `4996` - Marktpreis: Belgien   * `4997` - Marktpreis: Norwegen 2   * `4170` - Marktpreis: Österreich   * `252` - Marktpreis: Dänemark 1   * `253` - Marktpreis: Dänemark 2   * `254` - Marktpreis: Frankreich   * `255` - Marktpreis: Italien (Nord)   * `256` - Marktpreis: Niederlande   * `257` - Marktpreis: Polen   * `258` - Marktpreis: Polen   * `259` - Marktpreis: Schweiz   * `260` - Marktpreis: Slowenien   * `261` - Marktpreis: Tschechien   * `262` - Marktpreis: Ungarn   * `3791` - Prognostizierte Erzeugung: Offshore   * `123` - Prognostizierte Erzeugung: Onshore   * `125` - Prognostizierte Erzeugung: Photovoltaik   * `715` - Prognostizierte Erzeugung: Sonstige   * `5097` - Prognostizierte Erzeugung: Wind und Photovoltaik   * `122` - Prognostizierte Erzeugung: Gesamt
             filter_copy (int): Muss dem Wert von \"filter\" entsprechen. (Kaputtes API-Design)
             region_copy (str): Muss dem Wert von \"region\" entsprechen. (Kaputtes API-Design)
             timestamp (int):
@@ -352,11 +589,11 @@ class DefaultApi(object):
         kwargs["region_copy"] = region_copy
         kwargs["resolution"] = resolution
         kwargs["timestamp"] = timestamp
-        return self.filter_region_filter_copy_region_copy_resolution_timestamp_json_get_endpoint.call_with_http_info(
+        return self.chart_data_filter_region_filter_copy_region_copy_resolution_timestamp_json_get_endpoint.call_with_http_info(
             **kwargs
         )
 
-    def filter_region_index_resolution_json_get(
+    def chart_data_filter_region_index_resolution_json_get(
         self, filter, region="DE", resolution="hour", **kwargs
     ):
         """Indizes  # noqa: E501
@@ -365,11 +602,11 @@ class DefaultApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.filter_region_index_resolution_json_get(filter, region="DE", resolution="hour", async_req=True)
+        >>> thread = api.chart_data_filter_region_index_resolution_json_get(filter, region="DE", resolution="hour", async_req=True)
         >>> result = thread.get()
 
         Args:
-            filter (int): Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher
+            filter (int): Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher   * `4169` - Marktpreis: Deutschland/Luxemburg   * `5078` - Marktpreis: Anrainer DE/LU   * `4996` - Marktpreis: Belgien   * `4997` - Marktpreis: Norwegen 2   * `4170` - Marktpreis: Österreich   * `252` - Marktpreis: Dänemark 1   * `253` - Marktpreis: Dänemark 2   * `254` - Marktpreis: Frankreich   * `255` - Marktpreis: Italien (Nord)   * `256` - Marktpreis: Niederlande   * `257` - Marktpreis: Polen   * `258` - Marktpreis: Polen   * `259` - Marktpreis: Schweiz   * `260` - Marktpreis: Slowenien   * `261` - Marktpreis: Tschechien   * `262` - Marktpreis: Ungarn   * `3791` - Prognostizierte Erzeugung: Offshore   * `123` - Prognostizierte Erzeugung: Onshore   * `125` - Prognostizierte Erzeugung: Photovoltaik   * `715` - Prognostizierte Erzeugung: Sonstige   * `5097` - Prognostizierte Erzeugung: Wind und Photovoltaik   * `122` - Prognostizierte Erzeugung: Gesamt
             region (str): Land / Regelzone / Marktgebiet:   * `DE` - Land: Deutschland   * `AT` - Land: Österreich   * `LU` - Land: Luxemburg   * `DE-LU` - Marktgebiet: DE/LU (ab 01.10.2018)   * `DE-AT-LU` - Marktgebiet: DE/AT/LU (bis 30.09.2018)   * `50Hertz` - Regelzone (DE): 50Hertz   * `Amprion`- Regelzone (DE): Amprion   * `TenneT` - Regelzone (DE): TenneT   * `TransnetBW` - Regelzone (DE): TransnetBW   * `APG` - Regelzone (AT): APG   * `Creos` - Regelzone (LU): Creos . defaults to "DE", must be one of ["DE"]
             resolution (str): Auflösung der Daten:   * `hour` - Stündlich   * `quarterhour` - Viertelstündlich   * `day` - Täglich   * `week` - Wöchentlich   * `month` - Monatlich   * `year` - Jährlich . defaults to "hour", must be one of ["hour"]
 
@@ -423,8 +660,81 @@ class DefaultApi(object):
         kwargs["filter"] = filter
         kwargs["region"] = region
         kwargs["resolution"] = resolution
-        return (
-            self.filter_region_index_resolution_json_get_endpoint.call_with_http_info(
-                **kwargs
-            )
+        return self.chart_data_filter_region_index_resolution_json_get_endpoint.call_with_http_info(
+            **kwargs
+        )
+
+    def table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get(
+        self, filter, filter_copy, region_copy, timestamp, region="DE", **kwargs
+    ):
+        """Zeitreihendaten  # noqa: E501
+
+        Zeitreihendaten nach Filter, Region und Auflösung ab Timestamp  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get(filter, filter_copy, region_copy, timestamp, region="DE", async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            filter (int): Mögliche Filter:   * `1223` - Stromerzeugung: Braunkohle   * `1224` - Stromerzeugung: Kernenergie   * `1225` - Stromerzeugung: Wind Offshore   * `1226` - Stromerzeugung: Wasserkraft   * `1227` - Stromerzeugung: Sonstige Konventionelle   * `1228` - Stromerzeugung: Sonstige Erneuerbare   * `4066` - Stromerzeugung: Biomasse   * `4067` - Stromerzeugung: Wind Onshore   * `4068` - Stromerzeugung: Photovoltaik   * `4069` - Stromerzeugung: Steinkohle   * `4070` - Stromerzeugung: Pumpspeicher   * `4071` - Stromerzeugung: Erdgas   * `410` - Stromverbrauch: Gesamt (Netzlast)   * `4359` - Stromverbrauch: Residuallast   * `4387` - Stromverbrauch: Pumpspeicher   * `4169` - Marktpreis: Deutschland/Luxemburg   * `5078` - Marktpreis: Anrainer DE/LU   * `4996` - Marktpreis: Belgien   * `4997` - Marktpreis: Norwegen 2   * `4170` - Marktpreis: Österreich   * `252` - Marktpreis: Dänemark 1   * `253` - Marktpreis: Dänemark 2   * `254` - Marktpreis: Frankreich   * `255` - Marktpreis: Italien (Nord)   * `256` - Marktpreis: Niederlande   * `257` - Marktpreis: Polen   * `258` - Marktpreis: Polen   * `259` - Marktpreis: Schweiz   * `260` - Marktpreis: Slowenien   * `261` - Marktpreis: Tschechien   * `262` - Marktpreis: Ungarn   * `3791` - Prognostizierte Erzeugung: Offshore   * `123` - Prognostizierte Erzeugung: Onshore   * `125` - Prognostizierte Erzeugung: Photovoltaik   * `715` - Prognostizierte Erzeugung: Sonstige   * `5097` - Prognostizierte Erzeugung: Wind und Photovoltaik   * `122` - Prognostizierte Erzeugung: Gesamt
+            filter_copy (int): Muss dem Wert von \"filter\" entsprechen. (Kaputtes API-Design)
+            region_copy (str): Muss dem Wert von \"region\" entsprechen. (Kaputtes API-Design)
+            timestamp (int):
+            region (str): Land / Regelzone / Marktgebiet:   * `DE` - Land: Deutschland   * `AT` - Land: Österreich   * `LU` - Land: Luxemburg   * `DE-LU` - Marktgebiet: DE/LU (ab 01.10.2018)   * `DE-AT-LU` - Marktgebiet: DE/AT/LU (bis 30.09.2018)   * `50Hertz` - Regelzone (DE): 50Hertz   * `Amprion`- Regelzone (DE): Amprion   * `TenneT` - Regelzone (DE): TenneT   * `TransnetBW` - Regelzone (DE): TransnetBW   * `APG` - Regelzone (AT): APG   * `Creos` - Regelzone (LU): Creos . defaults to "DE", must be one of ["DE"]
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TimeSeries2
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs["async_req"] = kwargs.get("async_req", False)
+        kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+        kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+        kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+        kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+        kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+        kwargs["_spec_property_naming"] = kwargs.get("_spec_property_naming", False)
+        kwargs["_content_type"] = kwargs.get("_content_type")
+        kwargs["_host_index"] = kwargs.get("_host_index")
+        kwargs["_request_auths"] = kwargs.get("_request_auths", None)
+        kwargs["filter"] = filter
+        kwargs["filter_copy"] = filter_copy
+        kwargs["region"] = region
+        kwargs["region_copy"] = region_copy
+        kwargs["timestamp"] = timestamp
+        return self.table_data_filter_region_filter_copy_region_copy_quarterhour_timestamp_json_get_endpoint.call_with_http_info(
+            **kwargs
         )
